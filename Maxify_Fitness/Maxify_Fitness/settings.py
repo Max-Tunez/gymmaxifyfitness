@@ -257,11 +257,11 @@ WSGI_APPLICATION = 'Maxify_Fitness.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='mydb'),
-        'USER': config('DB_USER', default='postgres'),
-        'PASSWORD': config('DB_PASSWORD', default='Maxify2@@@'),
-        'HOST': config('DB_HOST', default='localhost'),
-        'PORT': config('DB_PORT', default='2456'),
+        'NAME': config('DB_NAME', default='myname'),
+        'USER': config('DB_USER', default='myuser'),
+        'PASSWORD': config('DB_PASSWORD', default='mypassword'),
+        'HOST': config('DB_HOST', default='myhost'),
+        'PORT': config('DB_PORT', default='myport'),
     }
 }
 
