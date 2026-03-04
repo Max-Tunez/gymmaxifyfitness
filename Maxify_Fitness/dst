@@ -1,0 +1,121 @@
+✔️ Recommended Setup (Production Style)
+
+Best setup:
+
+PostgreSQL runs automatically
+
+Django connects automatically
+
+No manual commands
+
+Perfect — this Recommended Production Setup is exactly what you want. It ensures your Django site works reliably without manual steps. Here’s how to configure it properly on Windows so PostgreSQL runs automatically and Django connects automatically.
+
+✅ Step 1 — Make PostgreSQL Start Automatically
+1️⃣ Open Windows Services
+
+Press:
+
+Windows + R
+
+Type:
+
+services.msc
+
+Press Enter
+
+2️⃣ Find PostgreSQL Service
+
+Look for something like:
+
+postgresql-x64-18
+
+or
+
+PostgreSQL Server 18
+3️⃣ Set Startup to Automatic
+
+Right-click → Properties
+
+Set:
+
+Startup Type = Automatic
+
+Click:
+
+Apply → OK
+4️⃣ Start the Service
+
+Right-click:
+
+Start
+
+✅ Now PostgreSQL will always start when Windows starts.
+
+No need for:
+
+pg_ctl start
+
+ever again.
+
+✅ Step 2 — Confirm PostgreSQL Runs Automatically
+
+Restart your computer.
+
+Then test:
+
+netstat -ano | findstr 2456
+
+You should see:
+
+LISTENING
+
+✅ Means PostgreSQL auto-start works.
+
+✅ Step 3 — Make Django Connect Automatically
+
+Make sure settings.py is correct:
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'yourdbname',
+        'USER': 'postgres',
+        'PASSWORD': 'yourpassword',
+        'HOST': 'localhost',
+        'PORT': 'your port umber',
+    }
+}
+
+No changes needed after this.
+
+Django connects automatically.
+
+✅ Step 4 — Test Automatic Setup
+
+Run:
+
+python manage.py runserver
+
+Open:
+
+http://127.0.0.1:8000/admin
+
+If it loads:
+
+✅ Database auto-connect works.
+
+✅ Final Production Result
+
+After this:
+
+✔ PostgreSQL runs automatically
+✔ Django connects automatically
+✔ No commands needed
+✔ Database always available
+✔ Production ready
+
+This is exactly how professional Django production systems run.
+
+
+# SECURITY WARNING: keep the secret key used in production secret!
+SECRET_KEY = 'django-insecure-+uldo1g8q@qfjc*0g3!sq##2x(59c3&@i631s%40y_&nhfz48('

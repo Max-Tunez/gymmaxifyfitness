@@ -1,0 +1,164 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Member Dashboard
+{% endblock title %}
+
+{% block header %}
+<h2 class="text-warning text-center my-4">USER DASHBOARD</h2>
+{% endblock header %}
+
+{% block body %}
+
+<div class="container py-4">
+
+    <!-- STATUS CARD -->
+    <div class="row mb-4">
+        <div class="col-md-4">
+            <div class="card shadow-sm p-4 text-center border-0">
+                <h6 class="text-muted">Membership Status</h6>
+
+                {% if not membership %}
+                    <h3 class="text-danger">NO ACTIVE PLAN</h3>
+                    <a href="{% url 'pricing' %}" class="btn btn-warning btn-sm mt-2">
+                        Subscribe Now
+                    </a>
+
+                {% elif membership.is_frozen %}
+                    <h3 class="text-info">FROZEN</h3>
+                    <p class="small">Membership temporarily paused</p>
+                    <a href="{% url 'toggle-freeze' %}" class="btn btn-success btn-sm">
+                        Unfreeze Now
+                    </a>
+
+                {% elif membership.has_expired %}
+                    <h3 class="text-danger">EXPIRED</h3>
+                    <p class="small">Expired on {{ membership.expiry_date|date:"d M Y" }}</p>
+                    <a href="{% url 'pricing' %}" class="btn btn-warning btn-sm">
+                        Renew
+                    </a>
+
+                {% else %}
+                    <h3 class="text-success">ACTIVE</h3>
+                    <p class="small">
+                        Expires: {{ membership.expiry_date|date:"d M Y" }}
+                    </p>
+                    <a href="{% url 'toggle-freeze' %}" class="btn btn-outline-secondary btn-sm">
+                        Freeze
+                    </a>
+                {% endif %}
+            </div>
+        </div>
+
+        <!-- USER INFO CARD -->
+        <div class="col-md-8">
+            <div class="card shadow-sm p-4 border-0">
+                <h5 class="fw-bold mb-3">
+                    Welcome, {{ request.user.username }}
+                </h5>
+                <p class="text-muted">
+                    Member since {{ request.user.date_joined|date:"M Y" }}
+                </p>
+
+                {% if membership and not membership.has_expired %}
+                <hr>
+                <h6>Your Plan: {{ membership.plan_name }}</h6>
+                <p class="mb-1">Expiry Date</p>
+                <strong>{{ membership.expiry_date|date:"F d, Y" }}</strong>
+
+                <hr>
+                <p class="mb-1 text-muted">Days Remaining</p>
+                <h6>{{ days_remaining }} Days</h6>
+
+                <div class="progress mt-2" style="height: 8px;">
+                    <div class="progress-bar bg-success"
+                        role="progressbar"
+                        style="width: {{ progress_percentage }}%;"
+                        aria-valuenow="{{ progress_percentage }}"
+                        aria-valuemin="0"
+                        aria-valuemax="100">
+                    </div>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- TRAINING PROGRAMS -->
+    <div class="row mb-4">
+        <div class="col-12">
+            <div class="card shadow-sm p-4 border-0">
+                <h5 class="fw-bold mb-3">Your Training Programs</h5>
+
+                {% if membership and not membership.is_frozen and not membership.has_expired %}
+                    
+                    {% for plan in workout_plans %}
+                    <div class="d-flex justify-content-between align-items-center border-bottom py-2">
+                        <span>{{ plan.title }}</span>
+                        <a href="{{ plan.pdf_file.url }}"
+                           class="text-warning fw-bold"
+                           download>
+                           Download PDF
+                        </a>
+                    </div>
+                    {% empty %}
+                        <p class="text-muted">No workout plans available.</p>
+                    {% endfor %}
+
+                {% else %}
+                    <p class="text-muted">
+                        Activate or unfreeze your membership to view workouts.
+                    </p>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+
+    <!-- PAYMENT HISTORY -->
+    <div class="row">
+        <div class="col-12">
+            <div class="card shadow-sm p-4 border-0">
+                <h5 class="fw-bold mb-4">Transaction History</h5>
+
+                <div class="table-responsive">
+                    <table class="table align-middle">
+                        <thead class="table-light">
+                            <tr>
+                                <th>Date</th>
+                                <th>Reference</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for record in history %}
+                            <tr>
+                                <td>{{ record.start_date|date:"d/m/Y" }}</td>
+                                <td class="small text-muted">{{ record.paystack_ref }}</td>
+                                <td>₦{{ record.amount_paid }}</td>
+                                <td>
+                                    {% if record.is_active %}
+                                        <span class="badge bg-success">Active</span>
+                                    {% else %}
+                                        <span class="badge bg-secondary">Past</span>
+                                    {% endif %}
+                                </td>
+                            </tr>
+                            {% empty %}
+                            <tr>
+                                <td colspan="4" class="text-center text-muted">
+                                    No transactions found.
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</div>
+
+{% endblock body %}

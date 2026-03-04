@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}
+Trainers Upload
+{% endblock title %}
+
+{% block header %}
+{% if messages %}
+  <div class="position-fixed bottom-0 end-0 p-3" style="z-index: 1050;">
+    {% for message in messages %}
+      <div class="toast align-items-center text-bg-success border-0 show" role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            {{ message }}
+          </div>
+        </div>
+      </div>
+    {% endfor %}
+  </div>
+
+
+<div class="card p-4 shadow-sm border-0">
+    <h3 class="fw-bold mb-4" style="color: rgb(196, 117, 14);">Upload New Routine</h3>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="mb-3">
+            <label class="form-label">Routine Title (e.g., Week 4 Leg Day)</label>
+            <input type="text" name="title" class="form-control" required>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Target Level</label>
+            <select name="level" class="form-select">
+                <option value="BASIC">Basic Access</option>
+                <option value="ELITE">Elite Strength</option>
+            </select>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PDF File</label>
+            <input type="file" name="pdf_file" class="form-control" accept=".pdf" required>
+        </div>
+        <button type="submit" class="btn btn-dark w-100 py-2">Publish to Members</button>
+    </form>
+</div>
+
+
+ <script>
+    setTimeout(() => {
+      document.querySelectorAll('.toast').forEach(toast => toast.remove());
+    }, 5000); // 5000ms = 5 seconds
+ </script>
+{% endif %}
+{% endblock header %}

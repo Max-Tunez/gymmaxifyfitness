@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+{% block title %}
+services
+{% endblock title %}
+
+{% block header %}
+<h2 class="text-warning">OUR SERVICES</h2>
+{% endblock header %}
+
+{% block body %}
+<div class="container py-5">
+
+<div class="row">
+
+{% for service in services %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow p-3 text-center" style="border-color:rgb(196, 117, 14)">
+
+{% if service.image %}
+<img src="{{ service.image.url }}" class="img-fluid mb-3">
+{% endif %}
+
+<h4>
+
+{{ service.name }}
+
+</h4>
+
+<p>
+
+{{ service.description }}
+
+</p>
+
+{% if service.price %}
+<h5 class="text-warning">
+
+₦{{ service.price }}
+
+</h5>
+{% endif %}
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+{% endblock body %}

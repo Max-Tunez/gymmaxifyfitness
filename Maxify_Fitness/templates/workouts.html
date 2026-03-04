@@ -1,0 +1,64 @@
+{% extends 'base.html' %}
+
+{% block title %}
+Workout Plans
+{% endblock title %}
+
+{% block header %}
+
+<h2 class="text-center">Workout Library</h2>
+
+{% endblock header %}
+
+
+{% block body %}
+
+<div class="container py-5">
+
+<div class="row">
+
+{% for plan in workouts %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow p-4 text-center">
+
+<h5>
+
+{{ plan.title }}
+
+</h5>
+
+<p class="text-muted">
+
+Level: {{ plan.membership_level }}
+
+</p>
+
+<a href="{{ plan.pdf_file.url }}"
+class="btn btn-warning"
+download>
+
+Download PDF
+
+</a>
+
+</div>
+
+</div>
+
+{% empty %}
+
+<div class="text-center">
+
+<h4>No workout plans available</h4>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+{% endblock body %}

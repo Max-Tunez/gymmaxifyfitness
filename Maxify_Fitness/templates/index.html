@@ -2,173 +2,284 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Maxify Fitness Nigeria</title>
-    <meta name="description" content="">
-    <meta name="keywords" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Maxify Fitness Nigeria</title>
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+        <link rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.2.0/css/all.min.css">
 
-    <!-- Favicons -->
-    <link href="static/assets/img/favicon.png" rel="icon">
-    <link href="static/assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+        <meta name="description" content>
+        <meta name="keywords" content>
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com" rel="preconnect">
-    <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
+        <!-- Favicons -->
+        <link href="{% static 'assets/img/gym_logo.png' %}" rel="icon">
+        <link href="{% static 'assets/img/gym_logo.png' %}" rel="apple-touch-icon">
 
-    <!-- Vendor CSS Files -->
-    <link href="static/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="static/assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="static/assets/vendor/aos/aos.css" rel="stylesheet">
-    <link href="static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
-    <link href="static/assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+        <!-- Fonts -->
+        <link href="https://fonts.googleapis.com" rel="preconnect">
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+            rel="stylesheet">
 
-    <!-- Main CSS File -->
-    <link href="static/assets/css/main.css" rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}"
+            rel="stylesheet">
+        <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}"
+            rel="stylesheet">
+        <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+        <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}"
+            rel="stylesheet">
+        <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}"
+            rel="stylesheet">
 
+        <!-- Main CSS File -->
+        <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
 
-</head>
+    </head>
 
-<body class="index-page">
+    <body class="index-page">
 
-    <header id="header" class="header d-flex align-items-center fixed-top">
-        <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+        <header id="header" class="header d-flex align-items-center fixed-top">
+            <div
+                class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-            <a href="/" class="logo d-flex align-items-center me-auto me-lg-0">
-                <!-- Uncomment the line below if you also wish to use an image logo -->
-                <!-- <img src="static/assets/img/logo.png" alt=""> -->
-                <h1 class="sitename">MAXIFY FITNESS</h1>
-                <span>.</span>
-            </a>
+                <a href="/"
+                    class="logo d-flex align-items-center me-auto me-lg-0">
+                    <!-- Uncomment the line below if you also wish to use an image logo -->
+                    <!-- {% comment %} <img src="static/assets/img/gym_logo.png" alt="" height="150px" width="150px" background-color="yellow">{% endcomment %} -->
+                    <h1 class="sitename">MAXIFY FITNESS</h1>
+                    <span></span>
+                </a>
 
-            <nav id="navmenu" class="navmenu">
-                <ul>
-                    <li><a href="/" class="active">Home<br></a></li>
-                    <li><a href="/about">About</a></li>
-                    <li><a href="/services">Services</a></li>
-                    <li><a href="/gallery">Gallery</a></li>
-                    <li><a href="/contact">Contact</a></li>
-                    <li class="dropdown"><a href="#"><span>Memberships</span> <i
-                                class="bi bi-chevron-down toggle-dropdown"></i></a>
-                        <ul>
-                            <li><a href="#">Enroll</a></li>
-                            <li><a href="#">Workouts</a></li>
-                            <li><a href="#">Tracker</a></li>
-                            <li><a href="#">View Profile</a></li>
-                        </ul>
-                    </li>
-                    <li><a href="/awards">Gym Awards</a></li>
-                </ul>
-                <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
-            </nav>
+                <nav id="navmenu" class="navmenu">
+                    <ul>
+                        <li class="nav-item">
+                            <a href="{% url 'Home' %}"
+                                class="nav-link {% if request.resolver_match.url_name == 'Home' %}active{% endif %}">
+                                Home
+                            </a>
+                        </li>
 
-            <a class="btn-getstarted" href="/signin">Sign In</a>
+                        <li class="nav-item">
+                            <a href="{% url 'about' %}"
+                                class="nav-link {% if request.resolver_match.url_name == 'about' %}active{% endif %}">
+                                About
+                            </a>
+                        </li>
 
-        </div>
-    </header>
+                        <li class="nav-item">
+                            <a href="{% url 'services' %}"
+                                class="nav-link {% if request.resolver_match.url_name == 'services' %}active{% endif %}">
+                                Services
+                            </a>
+                        </li>
 
-    <main class="main">
+                        <li class="nav-item">
+                            <a href="{% url 'gallery' %}"
+                                class="nav-link {% if request.resolver_match.url_name == 'gallery' %}active{% endif %}">
+                                Gallery
+                            </a>
+                        </li>
 
-        <!-- Hero Section -->
-        <section id="hero" class="hero section dark-background">
+                        <li class="nav-item">
+                            <a href="{% url 'contact' %}"
+                                class="nav-link {% if request.resolver_match.url_name == 'contact' %}active{% endif %}">
+                                Contact
+                            </a>
+                        </li>
+                        <li class="dropdown"><a
+                                href="#"><span>Memberships</span> <i
+                                    class="bi bi-chevron-down toggle-dropdown"></i></a>
+                            <ul>
+                                <li><a href="/enroll">Enroll</a></li>
+                                <li><a href="/attendance">Attendance</a></li>
+                                {% if user.is_authenticated %}
+                                <li><a href="/profile">View Profile</a></li>
+                                <li><a href="/dashboard">Dashboard</a></li>
+                                {% else %}
+                                <li><a href="/login">Login</a></li>
+                                {% endif %}
+                            </ul>
+                        </li>
+                        <li
+                            class="nav-link {% if request.resolver_match.url_name == 'upload' %}active{% endif %}"><a
+                                href="/upload">Ebook</a></li>
+                    </ul>
+                    <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+                </nav>
 
-            <img src="static/assets/img/hero-bg.jpg" alt="" data-aos="fade-in">
+                {% if not request.user.is_authenticated %}
+                <a class="btn-getstarted" href="/signup">Sign In</a>
+                {% else %}
+                <a class="btn-getstarted" href="/logout">Logout</a>
 
-            <div class="container">
-
-                <div class="row justify-content-center text-center" data-aos="fade-up" data-aos-delay="100">
-                    <div class="col-xl-6 col-lg-8">
-                        <h2>TIRED OF THE WAY YOU LOOK?<span>.</span></h2>
-                        <p>Join Maxify Fitness</p>
-                    </div>
-                </div>
-
-                <div class="row gy-4 mt-5 justify-content-center" data-aos="fade-up" data-aos-delay="200">
-                    <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="300">
-                        <div class="icon-box">
-                            <i class="bi bi-binoculars"></i>
-                            <h3><a href="">Lorem Ipsum</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
-                        <div class="icon-box">
-                            <i class="bi bi-bullseye"></i>
-                            <h3><a href="">Dolor Sitema</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="500">
-                        <div class="icon-box">
-                            <i class="bi bi-fullscreen-exit"></i>
-                            <h3><a href="">Sedare Perspiciatis</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
-                        <div class="icon-box">
-                            <i class="bi bi-card-list"></i>
-                            <h3><a href="">Magni Dolores</a></h3>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="700">
-                        <div class="icon-box">
-                            <i class="bi bi-gem"></i>
-                            <h3><a href="">Nemos Enimade</a></h3>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-        </section><!-- /Hero Section -->
-
-        <!-- About Section -->
-        <section id="about" class="about section">
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="row gy-4">
-                    <div class="col-lg-6 order-1 order-lg-2">
-                        <img src="static/assets/img/about.jpg" class="img-fluid" alt="">
-                    </div>
-                    <div class="col-lg-6 order-2 order-lg-1 content">
-                        <h3>Voluptatem dignissimos provident</h3>
-                        <p class="fst-italic">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-                            labore et dolore
-                            magna aliqua.
-                        </p>
-                        <ul>
-                            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat.</span></li>
-                            <li><i class="bi bi-check2-all"></i> <span>Duis aute irure dolor in reprehenderit in
-                                    voluptate velit.</span></li>
-                            <li><i class="bi bi-check2-all"></i> <span>Ullamco laboris nisi ut aliquip ex ea commodo
-                                    consequat. Duis aute irure dolor in reprehenderit in voluptate trideta
-                                    storacalaperda mastiro dolore eu fugiat nulla pariatur.</span></li>
-                        </ul>
-                        <p>
-                            Ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                            reprehenderit in voluptate
-                            velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-                            proident
-                        </p>
-                    </div>
-                </div>
+                {% endif %}
 
             </div>
+        </header>
 
-        </section><!-- /About Section -->
+        <main class="main">
 
-        <!-- Clients Section -->
-        <section id="clients" class="clients section">
+            <!-- Hero Section -->
+            <section id="hero" class="hero section dark-background">
 
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
+                <img src="{% static 'assets/img/hero-bg.png' %}" data-aos="fade-in">
 
-                <div class="swiper init-swiper">
-                    <script type="application/json" class="swiper-config">
+                <div class="container">
+
+                    <div class="row justify-content-center text-center"
+                        data-aos="fade-up" data-aos-delay="100">
+                        <div class="col-xl-6 col-lg-8">
+                            <h2>YOUR FITNESS, ELEVATED<span></span></h2>
+                            <p>From world-class powerlifting racks to luxury
+                                recovery suites.<br><br>We provide the tools.
+                                <br>You
+                                provide the sweat.</p>
+                        </div>
+                    </div>
+
+                    <div class="row gy-4 mt-5 justify-content-center"
+                        data-aos="fade-up" data-aos-delay="200">
+                        <div class="col-xl-2 col-md-4" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <div class="icon-box">
+                                <i class="fa-solid fa-bicep"></i>
+
+                                <i class="fa-solid fa-dumbbell arm-icon"></i>
+
+                                <h3><a href>The Iron Den
+                                        <br>(Powerlifting)</a></h3>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="400">
+                        <div class="icon-box">
+                            
+                            <i class="fa-solid fa-dumbbell arm-icon"></i>
+                            <i class="fa-solid fa-weight-hanging"></i>
+                            <h3><a href="">Nutrition and Diet Plans</a></h3>
+                        </div>
+                    </div> -->
+                        <div class="col-xl-2 col-md-4" data-aos="fade-up"
+                            data-aos-delay="500">
+                            <div class="icon-box">
+                                <i class="bi bi-bullseye"></i>
+
+                                <h3><a href>Total Wellness <br>(Luxury)</a></h3>
+                            </div>
+                        </div>
+                        <!-- <div class="col-xl-2 col-md-4" data-aos="fade-up" data-aos-delay="600">
+                        <div class="icon-box">
+                            <i class="fa-solid fa-person-running"></i>
+                            <i class="fa-solid fa-weight-scale"></i>
+                            <h3><a href="">Leg Day Program</a></h3>
+                        </div>
+                    </div> -->
+                        <div class="col-xl-2 col-md-4" data-aos="fade-up"
+                            data-aos-delay="700">
+                            <div class="icon-box">
+
+                                <i class="fa-solid fa-person-running"></i>
+                                <h3><a href>Daily Fitness
+                                        <br>(General)</a></h3>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section><!-- /Hero Section -->
+
+            <!-- About Section -->
+            <section id="about" class="about section">
+
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="row gy-4">
+                        <div class="col-lg-6 order-1 order-lg-2">
+                            <img src="{% static 'assets/img/about.avif' %}"
+                                class="img-fluid"
+                                style="height: 91.5%;border-radius: 10px;" alt>
+                        </div>
+                        <div class="col-lg-6 order-2 order-lg-1 content">
+                            <div class="card h-auto border-4 shadow-sm p-4"
+                                style="border-color: rgb(196, 117, 14);">
+                                <div class="display-6 text-primary mb-3"><i
+                                        class="bi bi-target"></i></div>
+                                <h3>Mission Statement</h3>
+                                <p class="text-muted">At Maxify Fitness, our
+                                    mission is to empower every individual to
+                                    maximize their physical and mental
+                                    potential. By merging competition-grade
+                                    equipment with elite recovery amenities, we
+                                    provide a high-performance sanctuary where
+                                    raw strength meets total wellness.</p>
+                            </div>
+                            <div class="card h-auto border-4 shadow-sm p-4"
+                                style="border-color: rgb(196, 117, 14);">
+                                <div class="display-6 text-primary mb-3"><i
+                                        class="bi bi-target"></i></div>
+                                <h3>Vision Statement</h3>
+                                <p class="text-muted">To become the ultimate
+                                    destination for holistic
+                                    high-performance—where the Maxify community
+                                    redefines what is possible, setting the
+                                    global standard for inclusive,
+                                    results-driven fitness.</p>
+                            </div>
+
+                            <div class="card h-auto border-5 shadow-sm p-4"
+                                style="border-color: rgb(196, 117, 14);">
+                                <div class="display-6 text-primary mb-3"><i
+                                        class="bi bi-target"></i></div>
+                                <h4 class="mb-0 fw-bold">10+</h4>
+                                <small style="margin-bottom: 10px;">Years of
+                                    Excellence</small>
+
+                                <p class="lead text-muted mb-5">
+                                    Maxify Fitness isn't just a gym;
+                                    it’s a high-performance
+                                    sanctuary. We’ve built a space
+                                    where competition-grade
+                                    powerlifting gear sits alongside
+                                    luxury recovery suites.
+                                </p>
+                                <p class="text-muted mb-5">
+                                    Whether you're chasing a new PR
+                                    on the platform or looking to
+                                    optimize your health through
+                                    elite recovery, our mission is
+                                    to maximize your potential.
+                                </p>
+
+                                <a href="/about"
+                                    class="btn btn-dark btn-lg px-5 py-3 rounded-pill shadow-sm"
+                                    onmouseover="this.style.backgroundColor='rgb(196, 117, 14)'; this.style.borderColor='rgb(196, 117, 14)'; this.style.transform='translateY(-3px)';"
+                                    onmouseout="this.style.backgroundColor='#000000'; this.style.borderColor='#000000'; this.style.transform='translateY(0px)';">
+                                    Know More About Us <i
+                                        class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+            <!-- Clients Section -->
+            <section id="clients" class="clients section">
+
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="swiper init-swiper">
+                        <script type="application/json" class="swiper-config">
             {
               "loop": true,
               "speed": 600,
@@ -201,403 +312,450 @@
               }
             }
           </script>
-                    <div class="swiper-wrapper align-items-center">
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-1.png" class="img-fluid" alt="">
+                        <div class="swiper-wrapper align-items-center">
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-1.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-2.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-3.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-4.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-5.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-6.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-7.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
+                            <div class="swiper-slide"><img
+                                    src="{% static 'assets/img/clients/client-8.png' %}"
+                                    class="img-fluid"
+                                    alt>
+                            </div>
                         </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-2.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-3.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-4.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-5.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-6.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-7.png" class="img-fluid" alt="">
-                        </div>
-                        <div class="swiper-slide"><img src="static/assets/img/clients/client-8.png" class="img-fluid" alt="">
-                        </div>
+                        <div class="swiper-pagination"></div>
                     </div>
-                    <div class="swiper-pagination"></div>
+
                 </div>
 
-            </div>
+            </section><!-- /Clients Section -->
 
-        </section><!-- /Clients Section -->
+            <!-- Features Section -->
 
-        <!-- Features Section -->
-        <section id="features" class="features section">
+            <!-- Services Section -->
+            <section id="services" class="services section">
 
-            <div class="container">
+                <div class="container section-title" data-aos="fade-up">
+                    <h2 style="color: rgb(196, 117, 14);">Services</h2>
+                    <p>WHAT CAN YOU GAIN FROM US?</p>
+                </div><div class="container">
 
-                <div class="row gy-4">
-                    <div class="features-image col-lg-6" data-aos="fade-up" data-aos-delay="100"><img
-                            src="static/assets/img/features-bg.jpg" alt=""></div>
-                    <div class="col-lg-6">
+                    <div class="row gy-4">
 
-                        <div class="features-item d-flex ps-0 ps-lg-3 pt-4 pt-lg-0" data-aos="fade-up"
+                        <div class="col-lg-4 col-md-6" data-aos="fade-up"
+                            data-aos-delay="100">
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-award-fill"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Elite Strength Zone</h3>
+                                </a>
+                                <p>Access competition-grade monolifts,
+                                    calibrated plates, and specialized bars
+                                    designed for powerlifting and Olympic
+                                    lifting.</p>
+                            </div>
+                        </div><div class="col-lg-4 col-md-6" data-aos="fade-up"
                             data-aos-delay="200">
-                            <i class="bi bi-archive flex-shrink-0"></i>
-                            <div>
-                                <h4>Est labore ad</h4>
-                                <p>Consequuntur sunt aut quasi enim aliquam quae harum pariatur laboris nisi ut aliquip
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-moisture"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Luxury Recovery</h3>
+                                </a>
+                                <p>Optimize your performance in our recovery
+                                    suite featuring infrared saunas, cold
+                                    plunges, and compression therapy.</p>
+                            </div>
+                        </div><div class="col-lg-4 col-md-6" data-aos="fade-up"
+                            data-aos-delay="300">
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-person-bounding-box"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Elite Coaching</h3>
+                                </a>
+                                <p>Work one-on-one with our certified trainers
+                                    to build custom strength programs or
+                                    nutritional blueprints tailored to your
+                                    goals.</p>
+                            </div>
+                        </div><div class="col-lg-4 col-md-6" data-aos="fade-up"
+                            data-aos-delay="400">
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-infinity"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Unlimited Access</h3>
+                                </a>
+                                <p>Your schedule shouldn't limit your progress.
+                                    Enjoy 24/7 keycard access to our entire
+                                    facility, including the recovery suite.</p>
+                            </div>
+                        </div><div class="col-lg-4 col-md-6" data-aos="fade-up"
+                            data-aos-delay="500">
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-lightning-charge-fill"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Dynamic Classes</h3>
+                                </a>
+                                <p>From high-intensity interval training (HIIT)
+                                    to mobility and yoga, join a community that
+                                    pushes you to be your best.</p>
+                            </div>
+                        </div><div class="col-lg-4 col-md-6" data-aos="fade-up"
+                            data-aos-delay="600">
+                            <div
+                                class="service-item position-relative p-4 shadow-sm rounded"
+                                style="border-color: rgb(196, 117, 14); border-style: groove;">
+                                <div class="icon mb-3">
+                                    <i class="bi bi-gem"
+                                        style="color: rgb(196, 117, 14); font-size: 2.5rem;"></i>
+                                </div>
+                                <a href="#"
+                                    class="stretched-link text-decoration-none text-dark">
+                                    <h3>Premium Amenities</h3>
+                                </a>
+                                <p>Full-service executive locker rooms, towel
+                                    service, and a curated nutrition bar to
+                                    refuel after your session.</p>
+                            </div>
+                        </div></div>
+
+                </div>
+
+            </section>
+
+            <!-- Call To Action Section -->
+            <section id="call-to-action"
+                class="call-to-action section dark-background"
+                style="position: relative; padding: 80px 0; overflow: hidden;">
+
+                <img src="{% static 'assets/img/Gym6.avif' %}" alt="Gym Background"
+                    style="position: absolute; inset: 0; display: block; width: 100%; height: 100%; object-fit: cover; z-index: 1; opacity: 5;">
+
+                <div class="container" style="position: relative; z-index: 2;">
+                    <div class="row justify-content-center" data-aos="zoom-in"
+                        data-aos-delay="100">
+                        <div class="col-xl-10">
+                            <div class="text-center text-white">
+                                <h3
+                                    style="font-size: 2.5rem; font-weight: 700; margin-bottom: 20px;">Push
+                                    Your Limits. Maximize Your Recovery.</h3>
+                                <p
+                                    style="font-size: 1.1rem; margin-bottom: 30px; opacity: 0.9;">
+                                    Join Maxify Fitness today and gain 24/7
+                                    access to competition-grade equipment and
+                                    our premium wellness suite.
+                                    Whether you are chasing a PR or a total body
+                                    reset, your journey starts here.
+                                </p>
+
+                                <a class="cta-btn" href="/enroll"
+                                    onmouseover="this.style.backgroundColor='rgb(196, 117, 14)'; this.style.borderColor='rgb(196, 117, 14)'; this.style.transform='scale(1.05)';"
+                                    onmouseout="this.style.backgroundColor='transparent'; this.style.borderColor='#ffffff'; this.style.transform='scale(1)';"
+                                    style="
+                          display: inline-block;
+                          padding: 12px 40px;
+                          border: 2px solid #ffffff;
+                          color: #ffffff;
+                          text-decoration: none;
+                          font-weight: 600;
+                          border-radius: 50px;
+                          transition: all 0.3s ease-in-out;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;
+                       ">
+                                    Become a Member <i
+                                        class="bi bi-arrow-right ms-2"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </section>
+            <!-- Stats Section -->
+
+            <!-- Testimonials Section -->
+            <!-- /Testimonials Section -->
+
+            <!-- Team Section -->
+
+            <!-- /Team Section -->
+
+            <!-- Contact Section -->
+            <section id="contact" class="contact section">
+
+                <!-- Section Title -->
+                <div class="container section-title" data-aos="fade-up">
+                    <h2>Contact</h2>
+                    <p>Contact Us</p>
+                </div><!-- End Section Title -->
+
+                <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+                    <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
+                        <iframe style="border:0; width: 100%; height: 270px;"
+                            src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
+                            frameborder="0" allowfullscreen loading="lazy"
+                            referrerpolicy="no-referrer-when-downgrade"></iframe>
+                    </div><!-- End Google Maps -->
+
+                    <div class="row gy-4">
+
+                        <div class="col-lg-4">
+                            <div class="info-item d-flex" data-aos="fade-up"
+                                data-aos-delay="300">
+                                <i class="bi bi-geo-alt flex-shrink-0"></i>
+                                <div>
+                                    <h3>Address</h3>
+                                    <p>Warri, Delta State, Nigeria.</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up"
+                                data-aos-delay="400">
+                                <i class="bi bi-telephone flex-shrink-0"></i>
+                                <div>
+                                    <h3>Call Us</h3>
+                                    <p>+234 808 797 7938</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                            <div class="info-item d-flex" data-aos="fade-up"
+                                data-aos-delay="500">
+                                <i class="bi bi-envelope flex-shrink-0"></i>
+                                <div>
+                                    <h3>Email Us</h3>
+                                    <p>maxifyhub01@gmail.com</p>
+                                </div>
+                            </div><!-- End Info Item -->
+
+                        </div>
+
+                        <div
+                            style="margin-top: 20px; text-align: center; align-items: center; justify-items: center;">
+                            <a class="cta-btn" href="/contact"
+                                onmouseover="this.style.backgroundColor='rgb(196, 117, 14)'; this.style.borderColor='rgb(196, 117, 14)'; this.style.transform='scale(1.05)';"
+                                onmouseout="this.style.backgroundColor='#1a1a1a'; this.style.borderColor='#1a1a1a'; this.style.color='#ffffff';"
+                                style="
+                          display: inline-block;
+                          padding: 12px 40px;
+                          border: 2px solid #ffffff;
+                          color: #ffffff;
+                          text-decoration: none;
+                          font-weight: 600;
+                          border-radius: 50px;
+                          transition: all 0.1s ease-in-out;
+                          text-transform: uppercase;
+                          letter-spacing: 1px;">
+                                Send Us a Message <i
+                                    class="bi bi-arrow-right ms-2"></i>
+                            </a>
+                        </div>
+
+                        <!-- End Contact Form -->
+
+                    </div>
+
+                </div>
+
+            </section><!-- /Contact Section -->
+
+        </main>
+
+        <footer id="footer" class="footer dark-background">
+
+            <div class="footer-top">
+                <div class="container">
+                    <div class="row gy-4">
+                        <div class="col-lg-4 col-md-6 footer-about">
+                            <a href="index.html"
+                                class="logo d-flex align-items-center">
+                                <span class="sitename">MAXIFY FITNESS</span>
+                            </a>
+                            <div class="footer-contact pt-3">
+                                <p>Warri, Delta State</p>
+                                <p>Nigeria</p>
+                                <p class="mt-3"><strong>Phone:</strong>
+                                    <span>+234 808 797 7938</span></p>
+                                <p><strong>Email:</strong>
+                                    <span>maxifyhub01@gmail.com</span>
                                 </p>
                             </div>
-                        </div><!-- End Features Item-->
-
-                        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="300">
-                            <i class="bi bi-basket flex-shrink-0"></i>
-                            <div>
-                                <h4>Harum esse qui</h4>
-                                <p>Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-                                </p>
+                            <div class="social-links d-flex mt-4">
+                                <a href><i class="bi bi-twitter-x"></i></a>
+                                <a href><i class="bi bi-facebook"></i></a>
+                                <a href><i class="bi bi-instagram"></i></a>
+                                <a href><i class="bi bi-linkedin"></i></a>
                             </div>
-                        </div><!-- End Features Item-->
-
-                        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="400">
-                            <i class="bi bi-broadcast flex-shrink-0"></i>
-                            <div>
-                                <h4>Aut occaecati</h4>
-                                <p>Aut suscipit aut cum nemo deleniti aut omnis. Doloribus ut maiores omnis facere</p>
-                            </div>
-                        </div><!-- End Features Item-->
-
-                        <div class="features-item d-flex mt-5 ps-0 ps-lg-3" data-aos="fade-up" data-aos-delay="500">
-                            <i class="bi bi-camera-reels flex-shrink-0"></i>
-                            <div>
-                                <h4>Beatae veritatis</h4>
-                                <p>Expedita veritatis consequuntur nihil tempore laudantium vitae denat pacta</p>
-                            </div>
-                        </div><!-- End Features Item-->
-
-                    </div>
-                </div>
-
-            </div>
-
-        </section><!-- /Features Section -->
-
-        <!-- Services Section -->
-        <section id="services" class="services section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Services</h2>
-                <p>Check our Services</p>
-            </div><!-- End Section Title -->
-
-            <div class="container">
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-activity"></i>
-                            </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Nesciunt Mete</h3>
-                            </a>
-                            <p>Provident nihil minus qui consequatur non omnis maiores. Eos accusantium minus dolores
-                                iure perferendis tempore et consequatur.</p>
                         </div>
-                    </div><!-- End Service Item -->
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-broadcast"></i>
+                        <div class="col-lg-2 col-md-3 footer-links">
+                            <h4>Useful Links</h4>
+                            <ul>
+                                <li><i class="bi bi-chevron-right"></i> <a
+                                        href="/"> Home</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a
+                                        href="/about"> About us</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a
+                                        href="/services"> Services</a></li>
+                                <!-- <li><i class="bi bi-chevron-right"></i> <a
+                                        href="#"> Terms of service</a></li>
+                                <li><i class="bi bi-chevron-right"></i> <a
+                                        href="#"> Privacy policy</a></li>
+                            </ul> -->
                             </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Eosle Commodi</h3>
-                            </a>
-                            <p>Ut autem aut autem non a. Sint sint sit facilis nam iusto sint. Libero corrupti neque eum
-                                hic non ut nesciunt dolorem.</p>
-                        </div>
-                    </div><!-- End Service Item -->
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-easel"></i>
+                            <div class="col-lg-2 col-md-3 footer-links">
+                                <h4>Our Services</h4>
+                                <ul>
+                                    <li><i class="bi bi-chevron-right"></i> <a
+                                            href="/services"> Luxury
+                                            recovery</a></li>
+                                    <li><i class="bi bi-chevron-right"></i> <a
+                                            href="/services"> Elite
+                                            Coaching</a></li>
+                                    <li><i class="bi bi-chevron-right"></i> <a
+                                            href="/services"> Unlimited
+                                            Access</a></li>
+                                    <li><i class="bi bi-chevron-right"></i> <a
+                                            href="/services"> Dynamic
+                                            Classes</a></li>
+                                    <li><i class="bi bi-chevron-right"></i> <a
+                                            href="/services"> Premium
+                                            Amenities</a></li>
+                                </ul>
                             </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Ledo Markt</h3>
-                            </a>
-                            <p>Ut excepturi voluptatem nisi sed. Quidem fuga consequatur. Minus ea aut. Vel qui id
-                                voluptas adipisci eos earum corrupti.</p>
-                        </div>
-                    </div><!-- End Service Item -->
 
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-bounding-box-circles"></i>
-                            </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Asperiores Commodit</h3>
-                            </a>
-                            <p>Non et temporibus minus omnis sed dolor esse consequatur. Cupiditate sed error ea fuga
-                                sit provident adipisci neque.</p>
-                            <a href="service-details.html" class="stretched-link"></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-calendar4-week"></i>
-                            </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Velit Doloremque</h3>
-                            </a>
-                            <p>Cumque et suscipit saepe. Est maiores autem enim facilis ut aut ipsam corporis aut. Sed
-                                animi at autem alias eius labore.</p>
-                            <a href="service-details.html" class="stretched-link"></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                    <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                        <div class="service-item position-relative">
-                            <div class="icon">
-                                <i class="bi bi-chat-square-text"></i>
-                            </div>
-                            <a href="service-details.html" class="stretched-link">
-                                <h3>Dolori Architecto</h3>
-                            </a>
-                            <p>Hic molestias ea quibusdam eos. Fugiat enim doloremque aut neque non et debitis iure.
-                                Corrupti recusandae ducimus enim.</p>
-                            <a href="service-details.html" class="stretched-link"></a>
-                        </div>
-                    </div><!-- End Service Item -->
-
-                </div>
-
-            </div>
-
-        </section><!-- /Services Section -->
-
-        <!-- Call To Action Section -->
-        <section id="call-to-action" class="call-to-action section dark-background">
-
-            <img src="static/assets/img/cta-bg.jpg" alt="">
-
-            <div class="container">
-                <div class="row justify-content-center" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="col-xl-10">
-                        <div class="text-center">
-                            <h3>Call To Action</h3>
-                            <p>Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                                nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui
-                                officia deserunt mollit anim id est laborum.</p>
-                            <a class="cta-btn" href="#">Call To Action</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-        </section><!-- /Call To Action Section -->
-
-
-        <!-- Stats Section -->
-       
-        <!-- Testimonials Section -->
-        <!-- /Testimonials Section -->
-
-        <!-- Team Section -->
-
-        <!-- /Team Section -->
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact section">
-
-            <!-- Section Title -->
-            <div class="container section-title" data-aos="fade-up">
-                <h2>Contact</h2>
-                <p>Contact Us</p>
-            </div><!-- End Section Title -->
-
-            <div class="container" data-aos="fade-up" data-aos-delay="100">
-
-                <div class="mb-4" data-aos="fade-up" data-aos-delay="200">
-                    <iframe style="border:0; width: 100%; height: 270px;"
-                        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d48389.78314118045!2d-74.006138!3d40.710059!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a22a3bda30d%3A0xb89d1fe6bc499443!2sDowntown%20Conference%20Center!5e0!3m2!1sen!2sus!4v1676961268712!5m2!1sen!2sus"
-                        frameborder="0" allowfullscreen="" loading="lazy"
-                        referrerpolicy="no-referrer-when-downgrade"></iframe>
-                </div><!-- End Google Maps -->
-
-                <div class="row gy-4">
-
-                    <div class="col-lg-4">
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="300">
-                            <i class="bi bi-geo-alt flex-shrink-0"></i>
-                            <div>
-                                <h3>Address</h3>
-                                <p>A108 Adam Street, New York, NY 535022</p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="400">
-                            <i class="bi bi-telephone flex-shrink-0"></i>
-                            <div>
-                                <h3>Call Us</h3>
-                                <p>+1 5589 55488 55</p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                        <div class="info-item d-flex" data-aos="fade-up" data-aos-delay="500">
-                            <i class="bi bi-envelope flex-shrink-0"></i>
-                            <div>
-                                <h3>Email Us</h3>
-                                <p>info@example.com</p>
-                            </div>
-                        </div><!-- End Info Item -->
-
-                    </div>
-
-                    <div class="col-lg-8">
-                        <form action="forms/contact.php" method="post" class="php-email-form" data-aos="fade-up"
-                            data-aos-delay="200">
-                            <div class="row gy-4">
-
-                                <div class="col-md-6">
-                                    <input type="text" name="name" class="form-control" placeholder="Your Name"
-                                        required="">
-                                </div>
-
-                                <div class="col-md-6 ">
-                                    <input type="email" class="form-control" name="email" placeholder="Your Email"
-                                        required="">
-                                </div>
-
-                                <div class="col-md-12">
-                                    <input type="text" class="form-control" name="subject" placeholder="Subject"
-                                        required="">
-                                </div>
-
-                                <div class="col-md-12">
-                                    <textarea class="form-control" name="message" rows="6" placeholder="Message"
-                                        required=""></textarea>
-                                </div>
-
-                                <div class="col-md-12 text-center">
+                            <div class="col-lg-4 col-md-12 footer-newsletter">
+                                <h4>Our Newsletter</h4>
+                                <p>Subscribe to our newsletter and receive the
+                                    latest news about our products and
+                                    services!</p>
+                                <form action="forms/newsletter.php"
+                                    method="post"
+                                    class="php-email-form">
+                                    <div class="newsletter-form"><input
+                                            type="email"
+                                            name="email"><input type="submit"
+                                            value="Subscribe"></div>
                                     <div class="loading">Loading</div>
                                     <div class="error-message"></div>
-                                    <div class="sent-message">Your message has been sent. Thank you!</div>
-
-                                    <button type="submit">Send Message</button>
-                                </div>
-
+                                    <div class="sent-message">Your subscription
+                                        request has been sent. Thank you!</div>
+                                </form>
                             </div>
-                        </form>
-                    </div><!-- End Contact Form -->
 
-                </div>
-
-            </div>
-
-        </section><!-- /Contact Section -->
-
-    </main>
-
-    <footer id="footer" class="footer dark-background">
-
-        <div class="footer-top">
-            <div class="container">
-                <div class="row gy-4">
-                    <div class="col-lg-4 col-md-6 footer-about">
-                        <a href="index.html" class="logo d-flex align-items-center">
-                            <span class="sitename">GP</span>
-                        </a>
-                        <div class="footer-contact pt-3">
-                            <p>A108 Adam Street</p>
-                            <p>New York, NY 535022</p>
-                            <p class="mt-3"><strong>Phone:</strong> <span>+1 5589 55488 55</span></p>
-                            <p><strong>Email:</strong> <span>info@example.com</span></p>
-                        </div>
-                        <div class="social-links d-flex mt-4">
-                            <a href=""><i class="bi bi-twitter-x"></i></a>
-                            <a href=""><i class="bi bi-facebook"></i></a>
-                            <a href=""><i class="bi bi-instagram"></i></a>
-                            <a href=""><i class="bi bi-linkedin"></i></a>
                         </div>
                     </div>
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Useful Links</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Home</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> About us</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Services</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Terms of service</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Privacy policy</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-2 col-md-3 footer-links">
-                        <h4>Our Services</h4>
-                        <ul>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Design</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Web Development</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Product Management</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Marketing</a></li>
-                            <li><i class="bi bi-chevron-right"></i> <a href="#"> Graphic Design</a></li>
-                        </ul>
-                    </div>
-
-                    <div class="col-lg-4 col-md-12 footer-newsletter">
-                        <h4>Our Newsletter</h4>
-                        <p>Subscribe to our newsletter and receive the latest news about our products and services!</p>
-                        <form action="forms/newsletter.php" method="post" class="php-email-form">
-                            <div class="newsletter-form"><input type="email" name="email"><input type="submit"
-                                    value="Subscribe"></div>
-                            <div class="loading">Loading</div>
-                            <div class="error-message"></div>
-                            <div class="sent-message">Your subscription request has been sent. Thank you!</div>
-                        </form>
-                    </div>
-
                 </div>
-            </div>
-        </div>
 
-        <div class="copyright">
-            <div class="container text-center">
-                <p>© <span>Copyright</span> <strong class="px-1 sitename">GP</strong> <span>All Rights Reserved</span>
-                </p>
-                <div class="credits">
-                    <!-- All the links in the footer should remain intact. -->
-                    <!-- You can delete the links only if you've purchased the pro version. -->
-                    <!-- Licensing information: https://bootstrapmade.com/license/ -->
-                    <!-- Purchase the pro version with working PHP/AJAX contact form: [buy-url] -->
-                    Designed by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+                <div class="copyright">
+                    <div class="container text-center">
+                        <p>© <span>Copyright</span> <strong
+                                class="px-1 sitename">MAXIFY FITNESS</strong>
+                            <span>All Rights
+                                Reserved</span>
+                        </p>
+                        <div class="credits">
+                            <!-- All the links in the footer should remain intact. -->
+                            <!-- You can delete the links only if you've purchased the pro version. -->
+
+                            Designed by <a
+                                href>Maximus I David</a>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </div>
 
-    </footer>
+            </footer>
 
-    <!-- Scroll Top -->
-    <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-            class="bi bi-arrow-up-short"></i></a>
+            <!-- Scroll Top -->
+            <a href="#" id="scroll-top"
+                class="scroll-top d-flex align-items-center justify-content-center"><i
+                    class="bi bi-arrow-up-short"></i></a>
 
-    <!-- Preloader -->
-    <div id="preloader"></div>
+            <!-- Preloader -->
+            <div id="preloader"></div>
 
-    <!-- Vendor JS Files -->
-    <script src="static/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="static/assets/vendor/php-email-form/validate.js"></script>
-    <script src="static/assets/vendor/aos/aos.js"></script>
-    <script src="static/assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="static/assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="static/assets/vendor/imagesloaded/imagesloaded.pkgd.min.js"></script>
-    <script src="static/assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="static/assets/vendor/purecounter/purecounter_vanilla.js"></script>
+            <!-- Vendor JS Files -->
+            <script
+                src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+            <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+            <script
+                src="{% static 'assets/vendor/purecounter/purecounter_vanilla.js' %}"></script>
 
-    <!-- Main JS File -->
-    <script src="static/assets/js/main.js"></script>
+            <!-- Main JS File -->
+            <script src="{% static 'assets/js/main.js' %}"></script>
 
-</body>
+        </body>
 
-</html>
+    </html>

@@ -333,6 +333,13 @@ h6 {
   }
 }
 
+.nav-link.active {
+    color: rgb(255, 196, 0) !important;
+    /* background-color: rgb(196,117,14); */
+    border-radius: 6px;
+    padding: 6px 12px;
+} 
+
 /* Navmenu - Mobile */
 @media (max-width: 1199px) {
   .mobile-nav-toggle {
@@ -970,6 +977,10 @@ section,
 /*--------------------------------------------------------------
 # Features Section
 --------------------------------------------------------------*/
+.features .container{
+  border-radius: 10px;
+  border-color: rgb(196, 117, 14);
+}
 .features .features-image {
   position: relative;
   min-height: 400px;

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+{% block title %}
+Pricing
+{% endblock title %}
+
+
+
+{% block header %}
+
+<h2 class="text-warning">CHOOSE YOUR MEMBERSHIP</h2>
+
+{% if messages %}
+<div class="container mt-3">
+    {% for message in messages %}
+    <div class="alert alert-{{ message.tags }} alert-dismissible fade show">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+    {% endfor %}
+</div>
+{% endif %}
+{% endblock header%}
+
+
+{% block body%}
+<div class="container py-5">
+<div class="row">
+
+{% for plan in plans %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow text-center p-4" style="border-color:yellow">
+
+<h4>{{ plan.name }}</h4>
+
+<h2 class="text-warning">
+
+₦{{ plan.price }}
+
+</h2>
+
+<p>
+
+{{ plan.description }}
+
+</p>
+
+<p>
+
+{{ plan.duration_days }} Days Access
+
+</p>
+
+
+<form action="/payment" method="POST">
+
+{% csrf_token %}
+
+<input type="hidden" name="amount" value="{{ plan.price }}">
+
+<input type="hidden" name="plan" value="{{ plan.name }}">
+
+<input type="hidden" name="days" value="{{ plan.duration_days }}">
+
+
+<button type="submit"
+class="btn btn-dark">
+
+Pay Now
+
+</button>
+
+</form>
+
+
+</div>
+
+</div>
+
+{% endfor %}
+
+</div>
+</div>
+{% endblock body%}

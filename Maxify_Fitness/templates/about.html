@@ -1,0 +1,120 @@
+{% extends 'base.html' %}
+{% block title %} About Us {% endblock title%}
+
+{% block header %}
+<h1 class="text-warning">ABOUT US</h1>
+<div class="container py-5">
+    <h1 class="display-4 fw-bold" style="color: rgb(196, 117, 14);">The Maxify
+        Standard</h1>
+    <p class="lead">Warri’s premier destination for elite strength and
+        luxury wellness.</p>
+</div>
+{% endblock header %}
+
+{% block body %}
+
+<section class="py-5">
+    <div class="container">
+        <div class="row align-items-center g-5">
+            <div class="col-lg-6">
+                <img src="static/assets/img/Gym10.avif"
+                    class="img-fluid rounded-4 shadow"
+                    alt="Maxify Fitness Facility">
+            </div>
+            <div class="col-lg-6">
+                <h2 class="fw-bold mb-4" style="color: rgb(196, 117, 14);">Where
+                    Grit Meets Gold.</h2>
+                <p class="text-muted">Founded in the heart of Delta State,
+                    Maxify Fitness was born out of a single vision: to eliminate
+                    the gap between hardcore training and executive
+                    recovery.</p>
+                <p class="text-muted">We realized that serious athletes in Warri
+                    shouldn't have to choose between a "garage gym" atmosphere
+                    for strength and a "spa" for wellness. We combined both into
+                    a high-performance sanctuary.</p>
+
+                <div class="row mt-4">
+                    <div class="col-6">
+                        <h5 class="fw-bold"><i
+                                class="bi bi-check-circle-fill text-success me-2"></i>24/7
+                            Access</h5>
+                        <p class="small text-muted">Train on your own schedule,
+                            day or night.</p>
+                    </div>
+                    <div class="col-6">
+                        <h5 class="fw-bold"><i
+                                class="bi bi-check-circle-fill text-success me-2"></i>Elite
+                            Recovery</h5>
+                        <p class="small text-muted">Infrared saunas and cold
+                            plunges on-site.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 bg-light text-center">
+    <div class="container">
+        <h2 class="fw-bold mb-5">Our Core Pillars</h2>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <i class="bi bi-award mb-3"
+                        style="font-size: 3rem; color: rgb(196, 117, 14);"></i>
+                    <h4 class="fw-bold">Peak Performance</h4>
+                    <p class="text-muted">Competition-grade equipment for
+                        powerlifters, bodybuilders, and athletes who demand the
+                        best gear.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <i class="bi bi-water mb-3"
+                        style="font-size: 3rem; color: rgb(196, 117, 14);"></i>
+                    <h4 class="fw-bold">Total Wellness</h4>
+                    <p class="text-muted">We focus on the 23 hours you spend
+                        outside the gym with science-backed recovery tools.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="card h-100 border-0 shadow-sm p-4">
+                    <i class="bi bi-geo-alt mb-3"
+                        style="font-size: 3rem; color: rgb(196, 117, 14);"></i>
+                    <h4 class="fw-bold">Local Pride</h4>
+                    <p class="text-muted">A world-class facility built
+                        specifically to elevate the fitness culture of Delta
+                        State, Nigeria.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="py-5 text-center bg-white">
+    <div class="container py-4">
+        <h2 class="fw-bold">Ready to Join the Elite?</h2>
+        <p class="text-muted mb-4">Take the first step toward maximizing your
+            potential.</p>
+
+        <a href="/enroll"
+            onmouseover="this.style.backgroundColor='rgb(196, 117, 14)'; this.style.borderColor='rgb(196, 117, 14)'; this.style.color='#ffffff'; this.style.transform='scale(1.05)';"
+            onmouseout="this.style.backgroundColor='#1a1a1a'; this.style.borderColor='#1a1a1a'; this.style.color='#ffffff'; this.style.transform='scale(1)';"
+            style="
+                  display: inline-block;
+                  padding: 15px 50px;
+                  background-color: #1a1a1a;
+                  border: 2px solid #1a1a1a;
+                  color: #ffffff;
+                  text-decoration: none;
+                  font-weight: 600;
+                  border-radius: 50px;
+                  transition: all 0.3s ease-in-out;
+                  text-transform: uppercase;
+               ">
+            Get Started Today
+        </a>
+    </div>
+</section>
+
+{% endblock body %}

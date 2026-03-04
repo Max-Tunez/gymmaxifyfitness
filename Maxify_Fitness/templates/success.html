@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<div style="text-align:center; margin-top:50px;">
+
+    <h2 style="color:green;">🎉 Payment Successful!</h2>
+
+    <p><strong>Plan:</strong> {{ membership.plan_name }}</p>
+    <p><strong>Amount Paid:</strong> ₦{{ membership.amount_paid }}</p>
+    <p><strong>Expires On:</strong> {{ membership.expiry_date|date:"d M Y" }}</p>
+
+    <br>
+
+    <a href="{% url 'dashboard' %}" class="btn btn-success">
+        Go to Dashboard
+    </a>
+
+</div>
+
+<script>
+    setTimeout(function(){
+        window.location.href = "{% url 'dashboard' %}";
+    }, 5000);
+</script>
+
+{% endblock header %}

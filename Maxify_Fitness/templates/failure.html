@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+
+{% block header %}
+
+<div style="text-align:center; margin-top:50px;">
+
+    <h2 style="color:red;">❌ Payment Failed</h2>
+
+    <p>Something went wrong with your transaction.</p>
+
+    <a href="{% url 'pricing' %}" class="btn btn-primary">
+        Try Again
+    </a>
+
+</div>
+
+{% endblock header %}

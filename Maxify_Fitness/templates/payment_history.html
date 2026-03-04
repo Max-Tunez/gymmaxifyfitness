@@ -1,0 +1,47 @@
+{% extends "base.html" %}
+{% block title %}Payment History{% endblock title%}
+
+{% block header %}
+Payment History
+{% endblock header %}
+
+{% block body %}
+
+<div class="container mt-5">
+    <h2>Payments</h2>
+
+    {% if memberships %}
+        <table class="table table-bordered mt-4">
+            <thead>
+                <tr>
+                    <th>Plan</th>
+                    <th>Amount</th>
+                    <th>Start Date</th>
+                    <th>Expiry Date</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for m in memberships %}
+                <tr>
+                    <td>{{ m.plan_name }}</td>
+                    <td>₦{{ m.amount_paid }}</td>
+                    <td>{{ m.start_date|date:"d M Y" }}</td>
+                    <td>{{ m.expiry_date|date:"d M Y" }}</td>
+                    <td>
+                        {% if m.has_expired %}
+                            <span style="color:red;">Expired</span>
+                        {% else %}
+                            <span style="color:green;">Active</span>
+                        {% endif %}
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    {% else %}
+        <p>No payment history found.</p>
+    {% endif %}
+</div>
+
+{% endblock body %}
