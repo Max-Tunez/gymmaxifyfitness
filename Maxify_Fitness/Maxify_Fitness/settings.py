@@ -178,6 +178,7 @@
 
 
 from decouple import config
+import dj_database_url
 import os
 from pathlib import Path
 from django.contrib.messages import constants as messages
@@ -213,13 +214,14 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
+    
 ]
 
 ROOT_URLCONF = 'Maxify_Fitness.urls'
@@ -255,16 +257,36 @@ WSGI_APPLICATION = 'Maxify_Fitness.wsgi.application'
 #     }
 # }
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': config('DB_NAME', default='myname'),
-        'USER': config('DB_USER', default='myuser'),
-        'PASSWORD': config('DB_PASSWORD', default='mypassword'),
-        'HOST': config('DB_HOST', default='myhost'),
-        'PORT': config('DB_PORT', default='myport'),
+DATABASE_URL = config('DATABASE_URL', default=None)
+
+if DATABASE_URL:
+    # =========================
+    # Production (Render DB)
+    # =========================
+    DATABASES = {
+        'default': dj_database_url.parse(
+            DATABASE_URL,
+            conn_max_age=600,
+            ssl_require=True
+        )
     }
-}
+
+else:
+    # =========================
+    # Local PostgreSQL
+    # =========================
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.postgresql',
+            'NAME': config('LOCAL_DB_NAME'),
+            'USER': config('LOCAL_DB_USER'),
+            'PASSWORD': config('LOCAL_DB_PASSWORD'),
+            'HOST': config('LOCAL_DB_HOST'),
+            'PORT': config('LOCAL_DB_PORT'),
+        }
+    }
+
+
 
 # ==============================
 # Password Validation

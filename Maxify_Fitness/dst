@@ -116,6 +116,4 @@ After this:
 
 This is exactly how professional Django production systems run.
 
-
-# SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-+uldo1g8q@qfjc*0g3!sq##2x(59c3&@i631s%40y_&nhfz48('
+psql -U postgres -h localhost -p 2456
