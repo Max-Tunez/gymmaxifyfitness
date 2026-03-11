@@ -278,13 +278,14 @@ else:
     DATABASES = {
         'default': {
             'ENGINE': 'django.db.backends.postgresql',
-            'NAME': config('LOCAL_DB_NAME'),
-            'USER': config('LOCAL_DB_USER'),
-            'PASSWORD': config('LOCAL_DB_PASSWORD'),
-            'HOST': config('LOCAL_DB_HOST'),
-            'PORT': config('LOCAL_DB_PORT'),
+            'NAME': config('LOCAL_DB_NAME', default='mydb'),
+            'USER': config('LOCAL_DB_USER', default='postgres'),
+            'PASSWORD': config('LOCAL_DB_PASSWORD', default=''),
+            'HOST': config('LOCAL_DB_HOST', default='localhost'),
+            'PORT': config('LOCAL_DB_PORT', default='2456'),
         }
     }
+
 
 
 
